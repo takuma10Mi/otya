@@ -26,7 +26,7 @@ class BlogsController < ApplicationController
   end
   private
     def blog_params
-      params.permit(:title, :image, :content).merge(:user_id => current_user.id) 
+      params.permit(:title, :image, :content).merge(user_id: current_user.id) 
     end
     def move_to_index
       redirect_to action: :index unless user_signed_in?
