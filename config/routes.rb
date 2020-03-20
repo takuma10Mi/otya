@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   get '/:id/edit' => 'blogs#edit'
   patch '/:id' => 'blogs#update'
   get '/new' => 'blogs#new'
+  resources :blogs do
+    collection do
+      # デフォルト形式をcsvに設定
+      get :index, defaults: { format: 'csv' }
+    end
+  end
 end

@@ -1,0 +1,15 @@
+.contents.row
+  %a{:href => "/"} 一覧にもどる
+  = form_with url: '/complete', model: @article, local:true, method: :post do |f|
+    %h3
+      投稿する
+    %p
+      = f.label :image
+      = f.file_field :image, as: :file
+    %p
+      = f.label :title
+      = f.text_field :title
+    %p
+      = f.text_area :content, size: '20x10'
+    %p
+    = f.submit "投稿"
