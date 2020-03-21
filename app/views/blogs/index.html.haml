@@ -1,11 +1,11 @@
 = render './blogs/devise'
--# = link_to "ユーザー記事データをCSVで出力",blogs_path(format: :csv),data: {confirm: "出力しますか？"}
--# %ul.list_article
--#   - @article.each do |article|
--#     %li
--#       %h2= article.title
--#       - if article.image != ""
--#         %img{:src => "#{article.image}", :width => "100"}/
--#       %p= article.content
--#       %p= article.created_at.strftime("%Y-%m-%d %H:%M")
--#       %p= link_to '詳細', blog_path(article.id),method: :get
+.article
+  %ul.list_article
+    - @article.each do |article|
+      %li.box
+        %h2= article.title
+        - if article.image != ""
+          %img{:src => "#{article.image}", :width => "150"}/
+        %p= article.content
+        %p= article.created_at.strftime("%Y-%m-%d %H:%M")
+        %p= link_to '詳細', blog_path(article.id),method: :get, class: "btn-detail"

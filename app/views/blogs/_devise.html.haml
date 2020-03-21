@@ -1,15 +1,18 @@
+.header
+  %h1 nekosa
 - if user_signed_in?
   .devise
     .devise__on
       %p.name
-        ユーザー：#{current_user.nickname}さん
+        ユーザー：#{current_user.nickname}
       %ul.nav
         %li
-          %a{:href => "/new"} 新規投稿
-        %li= link_to "ログアウト", destroy_user_session_path, method: :delete
+          %a{:href => "/new",class: 'post'} 新規投稿
+        %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post'
+        %li= link_to "ユーザー記事データをCSVで出力",blogs_path(format: :csv),data: {confirm: "出力しますか？"}, class: 'post'
 - else
   .devise
     .devise__off
       %ul.nav
-        %li= link_to "ログイン", new_user_session_path, class: 'post'
-        %li= link_to "新規登録", new_user_registration_path, class: 'post'
+        %li= link_to "ログイン", new_user_session_path, class: 'post', id: 'login'
+        %li= link_to "新規登録", new_user_registration_path, class: 'post', id: 'sign'
