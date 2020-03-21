@@ -1,0 +1,15 @@
+.devise{
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  &__on{
+    text-align: center;
+  }
+  &__off{
+    .nav{
+      display: flex;
+      text-align: center;
+    }
+  }
+}
