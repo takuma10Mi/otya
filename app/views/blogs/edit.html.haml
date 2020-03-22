@@ -1,16 +1,13 @@
 .contents.row
-  %a{:href => "/"} 一覧にもどる
-    = form_for(@article) do |f|
-    = image_tag @article.image
-    = f.file_field :image
-    = f.submit 'プロフィール編集を完了する', class: 'btn btn-primary'
-  = form_tag("/#{@article.id}", method: :patch) do
+  %a{href: "/"} 一覧にもどる
+  = form_with(url: blogs_path,model: @article, local: true, method: :patch) do |f|
     %h3
       編集する
-    %p
-      %input{:name => "title", :placeholder => "タイトル", :type => "text", :value => "#{@article.title}"}/
-    %p
-      %input{:name => "image", :placeholder => "Image Url", :type => "text", :value => "#{@article.image}"}/
-    %textarea{:cols => "50", :name => "content", :placeholder => "記事を編集してください", :rows => "10"}= @article.content
-    %p
-      %input{:type => "submit", :value => "投稿"}/
+    = f.text_field :title ,value: @article.title
+    - if @article.image?
+      = image_tag @article.image.url
+    - else
+    = image_tag("/")
+    = f.file_field :image
+    = f.text_area :content ,value: @article.content
+    = f.submit '投稿', class: 'btn btn-primary'
