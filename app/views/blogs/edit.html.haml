@@ -1,6 +1,6 @@
 .contents.row
   %a{href: "/"} 一覧にもどる
-  = form_with(url: blogs_path,model: @article, local: true, method: :patch) do |f|
+  = form_with(url: " /blogs/:id",model: @article, local: true, method: :patch) do |f|
     %h3
       編集する
     = f.text_field :title ,value: @article.title
