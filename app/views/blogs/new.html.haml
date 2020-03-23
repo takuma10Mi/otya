@@ -9,6 +9,8 @@
     %p
       = f.label :title
       = f.text_field :title
+    .select-wrap
+      = f.select :prefectures, Article.prefectures.keys, {}, {class: 'select-default'}
     %p
       = f.text_area :content, size: '20x10'
     %p

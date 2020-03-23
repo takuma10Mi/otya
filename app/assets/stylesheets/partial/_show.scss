@@ -1,0 +1,28 @@
+.show{
+  text-align: center;
+  list-style: none;
+  .post{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 1em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #ff7f7f;
+    transition: .4s;
+  }
+  .post > span {
+    border-bottom: solid 2px black;
+    border-top: solid 2px black;
+  }
+  .post:hover span {
+    padding: 0.1em 0;
+  }
+  p{
+    color: #364e96;/*文字色*/
+    padding: 0.5em 0;/*上下の余白*/
+    border-top: solid 3px #364e96;/*上線*/
+    border-bottom: solid 3px #364e96;/*下線*/
+    font-size: large;
+  }
+}

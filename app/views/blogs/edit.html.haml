@@ -1,13 +1,16 @@
 .contents.row
-  %a{href: "/"} 一覧にもどる
-  = form_with(url: " /blogs/:id",model: @article, local: true, method: :patch) do |f|
-    %h3
-      編集する
-    = f.text_field :title ,value: @article.title
+  %a.view{:href => "/"} 一覧にもどる
+= form_tag("/#{@article.id}", method: :patch, class:"text") do
+  %h3
+    編集
+  %p 
+    タイトル
+    %input{:name => "title", :placeholder => "タイトル", :type => "text", :value => "#{@article.title}"}/
+    -# .select-wrap
+    -#   = f.select :prefectures, Article.prefectures.keys, {}, {class: 'select-default'}
+  %p
     - if @article.image?
       = image_tag @article.image.url
-    - else
-    = image_tag("/")
-    = f.file_field :image
-    = f.text_area :content ,value: @article.content
-    = f.submit '投稿', class: 'btn btn-primary'
+  %textarea{:cols => "50", :name => "content", :placeholder => "記事を編集してください", :rows => "10"}= @article.content
+  %p.btn
+    %input{:type => "submit", :value => "投稿"}/

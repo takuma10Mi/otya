@@ -1,9 +1,12 @@
-- if user_signed_in? && current_user.id == @article.user_id
-  %li= link_to '編集', edit_blog_path
-  %li= link_to '削除', blog_path, method: :delete
-= @article.title
-%br/
-= @article.content
-%br/
-%p
-  %img{:src => "#{@article.image}"}/
+.show
+  - if user_signed_in? && current_user.id == @article.user_id
+    %li= link_to '編集', edit_blog_path, class: "post"
+    %li= link_to '削除', blog_path, class: "post", method: :delete
+  %p
+    = @article.title
+  %br/
+  %p
+    = @article.content
+  %br/
+  %p
+    %img{:src => "#{@article.image}"}/
