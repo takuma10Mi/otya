@@ -44,7 +44,6 @@
   ### Association
   belongs_to :user
 ## Webページ
-|PC用|
-|![screencapture-127-0-0-1-3000-2020-03-23-20_53_52](https://user-images.githubusercontent.com/54714018/77314398-ea0cc600-6d48-11ea-95b1-f681e05b9122.png)|
-|![screencapture-127-0-0-1-3000-new-2020-03-23-20_54_15](https://user-images.githubusercontent.com/54714018/77314407-ed07b680-6d48-11ea-81c5-fb9d7000a5ad.png)|
-|<img width="888" alt="スクリーンショット 2020-03-23 20 54 48" src="https://user-images.githubusercontent.com/54714018/77314588-4a036c80-6d49-11ea-8e27-7fb86d561fe2.png">|
+![screencapture-127-0-0-1-3000-2020-03-23-20_53_52](https://user-images.githubusercontent.com/54714018/77314398-ea0cc600-6d48-11ea-95b1-f681e05b9122.png)
+![screencapture-127-0-0-1-3000-new-2020-03-23-20_54_15](https://user-images.githubusercontent.com/54714018/77314407-ed07b680-6d48-11ea-81c5-fb9d7000a5ad.png)
+<img width="888" alt="スクリーンショット 2020-03-23 20 54 48" src="https://user-images.githubusercontent.com/54714018/77314588-4a036c80-6d49-11ea-8e27-7fb86d561fe2.png">
