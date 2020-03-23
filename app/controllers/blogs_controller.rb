@@ -33,7 +33,7 @@ class BlogsController < ApplicationController
 
   def destroy
     article = Article.find(params[:id])
-    article.destroy data: {confirm: "削除しますか？"}  if article.user_id === current_user.id
+    article.destroy if article.user_id === current_user.id
   end
 
   private
