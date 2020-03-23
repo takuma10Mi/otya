@@ -1,15 +1,13 @@
 # README
 
-- 株式会社RORO様より受注し、制作いたしました。
-- 背景としては、クライアントはホームページを所有しておらず、顧客の信頼に繋げるために作成を希望されました。
-
+- ねこさがしのアプリケーションを作りました。
+-　飼い猫が脱走しかけたことがあり、それを知らせられる掲示板です。
 ## アプリケーション概要
 
 - 画像投稿コメントアプリ
 
-
 ## アプリケーションの機能一覧
-
+-CSVのダウンロード
 
 
 ## アプリケーション内で使用している技術一覧
@@ -25,16 +23,28 @@
 
 ## データベース
 
--
+## usersテーブル
 
+  |名前|Column|Type|Options|
+  |---|------|----|-------|
+  |ID|id|integer|null: false|
+  |メールアドレス|mail|string|null: false, unique: true| 
+  |パスワード|password|string|null: false|
+  ### Association
+  - has_many :articles
+## addresses
+  |名前|Column|Type|Options|
+  |---|------|----|-------|
+  |ID|id|integer|null: false|
+  |ユーザーID|user_id|integer|null: false,foreign_key: true|
+  |タイトル|title|string|null: false|
+  |画像|image|string |null: false|
+  |内容|content|string|null: false|
+
+  ### Association
+  belongs_to :user
 ## Webページ
-|PC用|スマートフォン用|
-|---|---|
-|会社概要|
-|![PC用　会社概要](https://user-images.githubusercontent.com/54714018/77215990-a6546980-6b5a-11ea-9b50-80fb5d279f35.png)|![スマホ用　会社概要](https://user-images.githubusercontent.com/54714018/77215998-abb1b400-6b5a-11ea-8f0f-f8b45fad50f8.png)|
-|事業内容|
-|![PC用　事業内容](https://user-images.githubusercontent.com/54714018/77215994-a94f5a00-6b5a-11ea-9ae5-b3d5e9f58e80.png)|![スマホ用　事業内容](https://user-images.githubusercontent.com/54714018/77215999-ac4a4a80-6b5a-11ea-9d33-b65e2eae3f4b.png)|
-|代表者挨拶|
-|![PC用　代表者挨拶](https://user-images.githubusercontent.com/54714018/77215996-aa808700-6b5a-11ea-92ae-5080a07aef3c.png)|![スマホ用　代表者挨拶](https://user-images.githubusercontent.com/54714018/77216000-ace2e100-6b5a-11ea-8558-3712896ac3ac.png)|
-|お問い合わせ|
-|![PC用　お問い合わせ](https://user-images.githubusercontent.com/54714018/77215984-a18fb580-6b5a-11ea-9f93-47af11c47f7f.png)|![スマホ用　お問い合わせ](https://user-images.githubusercontent.com/54714018/77215997-abb1b400-6b5a-11ea-9e65-45c52d0006f3.png)|
+|PC用|
+|![screencapture-127-0-0-1-3000-2020-03-23-20_53_52](https://user-images.githubusercontent.com/54714018/77314398-ea0cc600-6d48-11ea-95b1-f681e05b9122.png)|
+|![screencapture-127-0-0-1-3000-new-2020-03-23-20_54_15](https://user-images.githubusercontent.com/54714018/77314407-ed07b680-6d48-11ea-81c5-fb9d7000a5ad.png)|
+|<img width="888" alt="スクリーンショット 2020-03-23 20 54 48" src="https://user-images.githubusercontent.com/54714018/77314588-4a036c80-6d49-11ea-8e27-7fb86d561fe2.png">|
